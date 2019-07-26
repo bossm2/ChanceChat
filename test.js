@@ -285,7 +285,7 @@ function get_tmp() {
 		console.log(atmp)
 	});
 }
-get_tmp()
+//get_tmp()
 
 function save_tmp() {
 	request({
@@ -324,7 +324,7 @@ function save_tmp() {
 	});
 }
 //test change
-// setInterval(function(){save_tmp()} ,1500)
+ setInterval(function(){save_tmp()} ,1500)
 //com_define : check if a usertocken id duplicated or not , if not added to tmp and db for future use.
 function com_define(usertocken) {
 	if (typeof tmp[usertocken] === 'undefined') {
