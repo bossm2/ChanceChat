@@ -301,6 +301,7 @@ function save_tmp() {
 		retryStrategy: myRetryStrategy
 	}, function (error, response, body) {
 		if (error) { console.log(error); }
+		console.log(body);
 		request({
 			url: ("https://api.github.com/repos/bossm3/filing/contents/mig.txt"),
 			method: "put",
@@ -319,6 +320,7 @@ function save_tmp() {
 			retryDelay: 5000,
 			retryStrategy: myRetryStrategy
 		}, function (error, response, body) {
+			console.log(body);
 			if (error) { console.log(error); }
 		});
 	});
