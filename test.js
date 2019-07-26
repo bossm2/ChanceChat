@@ -301,7 +301,7 @@ function save_tmp() {
 		retryStrategy: myRetryStrategy
 	}, function (error, response, body) {
 		if (error) { console.log(error); }
-		console.log(body);
+		//console.log(body);
 		request({
 			url: ("https://api.github.com/repos/bossm3/filing/contents/mig.txt"),
 			method: "put",
@@ -320,13 +320,13 @@ function save_tmp() {
 			retryDelay: 5000,
 			retryStrategy: myRetryStrategy
 		}, function (error, response, body) {
-			console.log(body);
+			//console.log(body);
 			if (error) { console.log(error); }
 		});
 	});
 }
 //test change
- setInterval(function(){save_tmp()} ,1500)
+ //setInterval(function(){save_tmp()} ,1500)
 //com_define : check if a usertocken id duplicated or not , if not added to tmp and db for future use.
 function com_define(usertocken) {
 	if (typeof tmp[usertocken] === 'undefined') {
