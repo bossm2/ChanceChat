@@ -269,7 +269,7 @@ function get_tmp() {
 		url: ("https://api.github.com/repos/bossm3/filing/contents/mig.txt"),
 		method: "GET",
 		headers: {
-			"Authorization": "Bearer 7103c1eba87ca6dc1365716f80a4b0b21a62abf8",
+			"Authorization": "Bearer 5d910a88d9e14286fb34304c8927757b86acfa0f",
 			'user-agent': 'node.js'
 		},
 		json: true,
@@ -285,7 +285,7 @@ function get_tmp() {
 		console.log(atmp)
 	});
 }
-//get_tmp()
+get_tmp()
 
 function save_tmp() {
 	request({
