@@ -1018,11 +1018,10 @@ setInterval(function () {
 		if (contents != '' && contents) {
 			contents.toString().split(/\r?\n/).forEach(function (element) {
 				var ta = element.split('||')
-				if (typeof tmp[ta[0]] != 'undefined' && typeof tmp[ta[1]] != 'undefined') {
-					zeroobject(ta[0]);
-					zeroobject(ta[1]);
-					atmp[ta[0]] = ta[1];
-					atmp[ta[1]] = ta[0];
+				if(typeof tmp[ta[0]] != 'undefined' && typeof tmp[ta[1]] != 'undefined'){
+					title = "\n با عرض پوزش نسبت به مشکل پیش آمده، شما هم اکنون می توانید چت گذشته خود را ادامه بدهید.";
+					thecommand(ta[1],title,ta[0]);
+					thecommand(ta[0],title,ta[1]);
 					console.log(element);
 				}
 				else { console.log('noooooooo :   ' + element); }
