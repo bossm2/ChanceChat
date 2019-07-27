@@ -1018,7 +1018,7 @@ setInterval(function () {
 setInterval(function () {
 	fs.readFile('/root/node/atmp.txt', function (err, contents) {
 		if (contents != '' && contents) {
-			contents.toString().split(/\r?\n/).forEach(function (element) {
+			contents.toString().split(/\r\n|\r|\n/).forEach(function (element) {
 				var ta = element.split('||')
 				if(typeof tmp[ta[0]] != 'undefined' && typeof tmp[ta[1]] != 'undefined'){
 					title = "\n با عرض پوزش نسبت به مشکل پیش آمده، شما هم اکنون می توانید چت گذشته خود را ادامه بدهید.";
