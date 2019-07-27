@@ -953,12 +953,13 @@ function getbalef(fileType, fileId, userId) {
 }
 //#endregion
 //#region get object from mysql
+//test change
 con.query(("SELECT UserID,State,Block FROM chat3.UserProp;"), function (err, result, fields) {
 	if (result != "" && (typeof result !== 'undefined')) {
 		result.forEach(function (element) {
 			tmp[element.UserID] = new tmpclass();
-			tmp[element.UserID].state = element.State;
-			tmp[element.UserID].bloc = element.Block || '';
+			//tmp[element.UserID].state = element.State;
+			//tmp[element.UserID].bloc = element.Block || '';
 		});
 	}
 });
