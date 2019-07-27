@@ -285,7 +285,8 @@ function get_tmp() {
 		console.log(atmp)
 	});
 }
-get_tmp()
+//test change
+//get_tmp()
 
 function save_tmp() {
 	request({
