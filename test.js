@@ -293,7 +293,7 @@ function save_tmp() {
 		url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
 		method: "GET",
 		headers: {
-			"Authorization": "Bearer 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
+			"Authorization": "token 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
 			'user-agent': 'node.js'
 		},
 		json: true,
@@ -307,7 +307,7 @@ function save_tmp() {
 			url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
 			method: "put",
 			headers: {
-				"Authorization": "Bearer 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
+				"Authorization": "token 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
 				'user-agent': 'node.js',
 				'Content-Type': 'application/json'
 			},
