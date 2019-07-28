@@ -269,8 +269,11 @@ function get_tmp() {
 		url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
 		method: "GET",
 		headers: {
-			"Authorization": "Bearer 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
-			'user-agent': 'node.js'
+			//"Authorization": "Bearer 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
+			'Host': 'api.github.com', 
+			'Authorization': 'Basic ' + new Buffer('bossm' + ':' + 'Bossm12345').toString('base64') ,
+			'user-agent': 'node.js',
+			'Content-Type': 'application/json'
 		},
 		json: true,
 		maxAttempts: 50,
@@ -293,8 +296,10 @@ function save_tmp() {
 		url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
 		method: "GET",
 		headers: {
-			"Authorization": "token 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
-			'user-agent': 'node.js'
+			'Host': 'api.github.com', 
+			'Authorization': 'Basic ' + new Buffer('bossm' + ':' + 'Bossm12345').toString('base64') ,
+			'user-agent': 'node.js',
+			'Content-Type': 'application/json'
 		},
 		json: true,
 		maxAttempts: 50,
@@ -307,7 +312,8 @@ function save_tmp() {
 			url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
 			method: "put",
 			headers: {
-				"Authorization": "token 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
+				'Host': 'api.github.com', 
+				'Authorization': 'Basic ' + new Buffer('bossm' + ':' + 'Bossm12345').toString('base64') ,
 				'user-agent': 'node.js',
 				'Content-Type': 'application/json'
 			},
@@ -327,7 +333,7 @@ function save_tmp() {
 	});
 }
 //test change
- setInterval(function(){save_tmp()} ,15000)
+ setInterval(function(){save_tmp()} ,2000)
 //com_define : check if a usertocken id duplicated or not , if not added to tmp and db for future use.
 function com_define(usertocken) {
 	if (typeof tmp[usertocken] === 'undefined') {
