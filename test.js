@@ -279,6 +279,7 @@ function get_tmp() {
 		maxAttempts: 50,
 		retryDelay: 5000,
 		retryStrategy: myRetryStrategy
+		
 	}, function (error, response, body) {
 		console.log(body)
 		if (error) { console.log(error); }
