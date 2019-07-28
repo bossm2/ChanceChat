@@ -266,10 +266,10 @@ con.on('error', function (err) {
 //run commands
 function get_tmp() {
 	request({
-		url: ("https://api.github.com/repos/bossm3/filing/contents/mig.txt"),
+		url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
 		method: "GET",
 		headers: {
-			"Authorization": "Bearer 5d910a88d9e14286fb34304c8927757b86acfa0f",
+			"Authorization": "Bearer 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
 			'user-agent': 'node.js'
 		},
 		json: true,
@@ -290,10 +290,10 @@ function get_tmp() {
 
 function save_tmp() {
 	request({
-		url: ("https://api.github.com/repos/bossm3/filing/contents/mig.txt"),
+		url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
 		method: "GET",
 		headers: {
-			"Authorization": "Bearer 5d910a88d9e14286fb34304c8927757b86acfa0f",
+			"Authorization": "Bearer 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
 			'user-agent': 'node.js'
 		},
 		json: true,
@@ -304,10 +304,10 @@ function save_tmp() {
 		if (error) { console.log(error); }
 		console.log(body);
 		request({
-			url: ("https://api.github.com/repos/bossm3/filing/contents/mig.txt"),
+			url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
 			method: "put",
 			headers: {
-				"Authorization": "Bearer 5d910a88d9e14286fb34304c8927757b86acfa0f",
+				"Authorization": "Bearer 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
 				'user-agent': 'node.js',
 				'Content-Type': 'application/json'
 			},
