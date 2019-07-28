@@ -271,7 +271,7 @@ function get_tmp() {
 		headers: {
 			//"Authorization": "Bearer 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
 			'Host': 'api.github.com', 
-			'Authorization': 'Basic ' + new Buffer('bossm' + ':' + '3d12a95c9e5fa43490e9cd4dd396127bdb7928b8').toString('base64') ,
+			'Authorization': 'Basic ' + new Buffer('bossm' + ':' + '7250b047bf9f79a4a87e5fa46037a54a1973997a').toString('base64') ,
 			'user-agent': 'node.js',
 			'Content-Type': 'application/json'
 		},
@@ -297,7 +297,7 @@ function save_tmp() {
 		method: "GET",
 		headers: {
 			'Host': 'api.github.com', 
-			'Authorization': 'Basic ' + new Buffer('bossm' + ':' + '3d12a95c9e5fa43490e9cd4dd396127bdb7928b8').toString('base64') ,
+			'Authorization': 'Basic ' + new Buffer('bossm' + ':' + '7250b047bf9f79a4a87e5fa46037a54a1973997a').toString('base64') ,
 			'user-agent': 'node.js',
 			'Content-Type': 'application/json'
 		},
@@ -313,7 +313,7 @@ function save_tmp() {
 			method: "put",
 			headers: {
 				'Host': 'api.github.com', 
-				'Authorization': 'Basic ' + new Buffer('bossm' + ':' + '3d12a95c9e5fa43490e9cd4dd396127bdb7928b8').toString('base64') ,
+				'Authorization': 'Basic ' + new Buffer('bossm' + ':' + '7250b047bf9f79a4a87e5fa46037a54a1973997a').toString('base64') ,
 				'user-agent': 'node.js',
 				'Content-Type': 'application/json'
 			},
