@@ -286,7 +286,7 @@ function get_tmp() {
 	});
 }
 //test change
-get_tmp()
+//get_tmp()
 
 function save_tmp() {
 	request({
