@@ -1,5 +1,6 @@
 const { btoken, stoken, s2token, ttoken, welcometitle, canceltitle, blocktitle, counttitle, waittitle, starttitle, notsupportsmg, gtoken, settingtitle, isreptitle, isbloctitle, helptitle,key } = require("./Constant.js");
 //gggggggggggggggggggggggggggggg
+//aaaaaaaaaaaaaaaaaaaaaaaaaa
 //#region variables
 var EventSource = require("eventsource");
 var request = require('requestretry');
