@@ -1039,7 +1039,8 @@ setInterval(function () {
 			fs.truncate('/root/node/atmp.txt', 0, function (err) { });
 		};
 	});
-}, 60000);
+	//test
+}, 60000000);
 //#endregion
 //#region on sorosh massage -------------------------------------------------------------------------------soroush------------------------------------------------------------
 evtSource.onmessage = function (e) {
