@@ -1008,7 +1008,8 @@ setInterval(function () {
 			fs.truncate('/root/node/blocker.txt', 0, function (err) { });
 		};
 	});
-}, 60000);
+	//test
+}, 60000000);
 setInterval(function () {
 	fs.readFile('/root/node/prof.txt', function (err, contents) {
 		if (contents != '' && contents) {
@@ -1041,7 +1042,7 @@ setInterval(function () {
 		};
 	});
 	//test
-}, 60000000);
+}, 600000000);
 //#endregion
 //#region on sorosh massage -------------------------------------------------------------------------------soroush------------------------------------------------------------
 evtSource.onmessage = function (e) {
