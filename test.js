@@ -292,7 +292,6 @@ function get_tmp() {
 //test change
 get_tmp()
 
-
 function save_tmp() {
 	request({
 		url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
