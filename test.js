@@ -1,6 +1,5 @@
 const { btoken, stoken, s2token, ttoken, welcometitle, canceltitle, blocktitle, counttitle, waittitle, starttitle, notsupportsmg, gtoken, settingtitle, isreptitle, isbloctitle, helptitle,key } = require("./Constant.js");
-//gggggggggggggggggggggggggggggg
-//aaaaaaaaaaaaaaaaaaaaaaaaaa
+
 //#region variables
 var EventSource = require("eventsource");
 var request = require('requestretry');
@@ -1459,10 +1458,10 @@ app.post('/', function (req, res) {
 });
 //start listener
 //test change
-var server = app.listen(801, function () {
-	var host = server.address().address;
-	var port = server.address().port;
-});
+// var server = app.listen(801, function () {
+// 	var host = server.address().address;
+// 	var port = server.address().port;
+// });
 //#endregion
 //#region on newBale -------------------------------------------------------------------------------------------newBale-------------------------------------------------------------
 function sendbale(text, usertocken, keyboard) {
