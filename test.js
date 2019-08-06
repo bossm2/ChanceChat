@@ -1322,7 +1322,7 @@ function callback(err, obj) {
 	// handle returned object
 	console.log(obj);
 };
-// bot.startPolling(callback);
+bot.startPolling(callback);
 //#endregion
 //#region on GAP --------------------------------------------------------------------------------------------GAP---------------------------------------------------------------
 //massage sender gap function
@@ -1458,10 +1458,10 @@ app.post('/', function (req, res) {
 });
 //start listener
 //test change
-// var server = app.listen(801, function () {
-// 	var host = server.address().address;
-// 	var port = server.address().port;
-// });
+var server = app.listen(801, function () {
+	var host = server.address().address;
+	var port = server.address().port;
+});
 //#endregion
 //#region on newBale -------------------------------------------------------------------------------------------newBale-------------------------------------------------------------
 function sendbale(text, usertocken, keyboard) {
