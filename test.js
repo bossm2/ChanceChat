@@ -1322,7 +1322,7 @@ function callback(err, obj) {
 	// handle returned object
 	console.log(obj);
 };
-bot.startPolling(callback);
+// bot.startPolling(callback);
 //#endregion
 //#region on GAP --------------------------------------------------------------------------------------------GAP---------------------------------------------------------------
 //massage sender gap function
