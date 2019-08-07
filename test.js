@@ -602,24 +602,24 @@ function smg(usertocken, tobody, plt) {
 	var textsmg = '';
 	if (plt == 's' || plt == 'q') {
 		if (tobody.type == 'TEXT') { textsmg = tobody.body }
-		else if (tobody.fileType == 'IMAGE') { simage('p', usertocken, stoken + '/downloadFile/' + tobody.fileUrl, doc_prop('p', 's', tobody)) }
-		else if (tobody.type == 'FILE') { simage('f', usertocken, stoken + '/downloadFile/' + tobody.fileUrl, doc_prop('f', 's', tobody)) }
+		else if (tobody.fileType == 'IMAGE') { uploading('p', usertocken, stoken + '/downloadFile/' + tobody.fileUrl, doc_prop('p', 's', tobody)) }
+		else if (tobody.type == 'FILE') { uploading('f', usertocken, stoken + '/downloadFile/' + tobody.fileUrl, doc_prop('f', 's', tobody)) }
 		else { textsmg = notsupportsmg }
 	}
 	else if (plt == 't') {
 		if (typeof tobody.text != 'undefined') { textsmg = tobody.text }
-		else if (typeof tobody.photo != 'undefined') { gettelf('p', tobody).then(address => simage('p', usertocken, address, doc_prop('p', 't', tobody))).catch(error => { }); }
-		else if (typeof tobody.document != 'undefined') { gettelf('f', tobody).then(address => simage('f', usertocken, address, doc_prop('f', 't', tobody))).catch(error => { }); }
-		else if (typeof tobody.audio != 'undefined') { gettelf('a', tobody).then(address => simage('f', usertocken, address, doc_prop('a', 't', tobody))).catch(error => { }); }
-		else if (typeof tobody.voice != 'undefined') { gettelf('v', tobody).then(address => simage('f', usertocken, address, doc_prop('v', 't', tobody))).catch(error => { }); }
-		else if (typeof tobody.video_note != 'undefined') { gettelf('vn', tobody).then(address => simage('f', usertocken, address, doc_prop('vn', 't', tobody))).catch(error => { }); }
-		else if (typeof tobody.video != 'undefined') { gettelf('c', tobody).then(address => simage('f', usertocken, address, doc_prop('c', 't', tobody))).catch(error => { }); }
+		else if (typeof tobody.photo != 'undefined') { gettelf('p', tobody).then(address => uploading('p', usertocken, address, doc_prop('p', 't', tobody))).catch(error => { }); }
+		else if (typeof tobody.document != 'undefined') { gettelf('f', tobody).then(address => uploading('f', usertocken, address, doc_prop('f', 't', tobody))).catch(error => { }); }
+		else if (typeof tobody.audio != 'undefined') { gettelf('a', tobody).then(address => uploading('f', usertocken, address, doc_prop('a', 't', tobody))).catch(error => { }); }
+		else if (typeof tobody.voice != 'undefined') { gettelf('v', tobody).then(address => uploading('f', usertocken, address, doc_prop('v', 't', tobody))).catch(error => { }); }
+		else if (typeof tobody.video_note != 'undefined') { gettelf('vn', tobody).then(address => uploading('f', usertocken, address, doc_prop('vn', 't', tobody))).catch(error => { }); }
+		else if (typeof tobody.video != 'undefined') { gettelf('c', tobody).then(address => uploading('f', usertocken, address, doc_prop('c', 't', tobody))).catch(error => { }); }
 		else { textsmg = notsupportsmg; console.log('a') }
 	}
 	else if (plt == 'g') {
 		if (tobody.type == "text") { textsmg = tobody.data; }
-		else if (tobody.type == "image") { simage('p', usertocken, (JSON.parse(tobody.data)).path, doc_prop('p', 'g', JSON.parse(tobody.data))) }
-		else if (tobody.type == "file" || tobody.type == "audio" || tobody.type == "video") { simage('f', usertocken, (JSON.parse(tobody.data)).path, doc_prop('f', 'g', JSON.parse(tobody.data))) }
+		else if (tobody.type == "image") { uploading('p', usertocken, (JSON.parse(tobody.data)).path, doc_prop('p', 'g', JSON.parse(tobody.data))) }
+		else if (tobody.type == "file" || tobody.type == "audio" || tobody.type == "video") { uploading('f', usertocken, (JSON.parse(tobody.data)).path, doc_prop('f', 'g', JSON.parse(tobody.data))) }
 		else { textsmg = notsupportsmg }
 	}
 	else if (plt == 'b') {
@@ -866,10 +866,7 @@ function file_t(fileType, usertocken, res, prop) {
 	// 	console.log(message.result.photo);
 	// });
 }
-function simage(fileType, usertocken, address, prop) {
-	// console.log(address)
-	// console.log(prop)
-	// console.log(fileType)
+function uploading(fileType, usertocken, address, prop) {
 	if (prop.s < 20000000) {
 		https.get(address, function (res) {
 
@@ -1045,7 +1042,7 @@ setInterval(function () {
 //#region on sorosh massage -------------------------------------------------------------------------------soroush------------------------------------------------------------
 evtSource.onmessage = function (e) {
 	var jsoncontent = JSON.parse(e.data);
-	// console.log(jsoncontent);
+	console.log(jsoncontent);
 	//definition objects
 	var allowsend = 0;
 	var usertocken = 's' + ',' + jsoncontent.from;
@@ -1572,7 +1569,7 @@ socket.addEventListener('message', (e) => {
 		if (wait_bale[0] == jsoncontent.id) {
 			if (wait_bale[1] == 'geturl') {
 
-				simage(wait_bale[4], wait_bale[2], jsoncontent.body.url, wait_bale[3]);
+				uploading(wait_bale[4], wait_bale[2], jsoncontent.body.url, wait_bale[3]);
 			}
 			else if (wait_bale[1] == 'getserver') {
 				file_b(jsoncontent.body.url, wait_bale[2], jsoncontent.body.fileId, jsoncontent.body.userId, wait_bale[3], wait_bale[4], wait_bale[5]);
