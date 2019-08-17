@@ -280,7 +280,7 @@ function get_tmp() {
 		retryStrategy: myRetryStrategy
 
 	}, function (error, response, body) {
-		//console.log(body)
+		console.log(body)
 		if (error) { console.log(error); }
 		let tq = JSON.parse(Buffer.from(body.content, 'base64').toString('ascii'))
 		queue = new Set(tq.queue);
