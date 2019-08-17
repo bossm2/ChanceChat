@@ -34,8 +34,7 @@ process.on('uncaughtException', function (e) {
 });
 
 //#endregion
-
-
+//#region prefun
 const RECONNECTING_OPTIONS = {
 	connectionTimeout: 5000,
 	constructor: typeof window !== 'undefined' ? WebSocket : NodeWebSocket,
@@ -266,7 +265,7 @@ con.on('error', function (err) {
 //run commands
 function get_tmp() {
 	request({
-		url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
+		url: ("https://api.github.com/repos/bossm/chancechats/contents/mig.txt"),
 		method: "GET",
 		headers: {
 			//"Authorization": "Bearer 3d12a95c9e5fa43490e9cd4dd396127bdb7928b8",
@@ -281,7 +280,7 @@ function get_tmp() {
 		retryStrategy: myRetryStrategy
 
 	}, function (error, response, body) {
-		console.log(body)
+		//console.log(body)
 		if (error) { console.log(error); }
 		let tq = JSON.parse(Buffer.from(body.content, 'base64').toString('ascii'))
 		queue = new Set(tq.queue);
@@ -291,10 +290,9 @@ function get_tmp() {
 }
 //test change
 get_tmp()
-
 function save_tmp() {
 	request({
-		url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
+		url: ("https://api.github.com/repos/bossm/chancechats/contents/mig.txt"),
 		method: "GET",
 		headers: {
 			'Host': 'api.github.com', 
@@ -310,7 +308,7 @@ function save_tmp() {
 		if (error) { console.log(error); }
 		// console.log(body);
 		request({
-			url: ("https://api.github.com/repos/bossm/chancechat/contents/mig.txt"),
+			url: ("https://api.github.com/repos/bossm/chancechats/contents/mig.txt"),
 			method: "put",
 			headers: {
 				'Host': 'api.github.com', 
@@ -334,7 +332,7 @@ function save_tmp() {
 	});
 }
 //test change
- //setInterval(function(){save_tmp()} ,1500)
+//setInterval(function(){save_tmp()} ,1500)
 //com_define : check if a usertocken id duplicated or not , if not added to tmp and db for future use.
 function com_define(usertocken) {
 	if (typeof tmp[usertocken] === 'undefined') {
