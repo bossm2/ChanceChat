@@ -280,13 +280,13 @@ function get_tmp() {
 		retryStrategy: myRetryStrategy
 
 	}, function (error, response, body) {
+		console.log(body);
+		console.log(body);
 		if (error) { console.log(error); }
-		else{
-			let tq = JSON.parse(Buffer.from(body.content, 'base64').toString('ascii'))
-			queue = new Set(tq.queue);
-			atmp = tq.atmp
-			console.log(atmp)
-		}
+		let tq = JSON.parse(Buffer.from(body.content, 'base64').toString('ascii'))
+		queue = new Set(tq.queue);
+		atmp = tq.atmp
+		console.log(atmp)
 	});
 }
 //test change
