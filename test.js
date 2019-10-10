@@ -246,20 +246,20 @@ evtSource2.onerror = function (err) {
 	if (err) console.log(err);
 }
 //conection string mysql
-var con = mysql.createConnection({
-	host: "localhost",
-	user: "root",
-	password: "!@#123qweQWE",
-	database: "chat2",
-	multipleStatements: true
-});
+// var con = mysql.createConnection({
+// 	host: "localhost",
+// 	user: "root",
+// 	password: "!@#123qweQWE",
+// 	database: "chat2",
+// 	multipleStatements: true
+// });
 //connect to mysql 
-con.connect(function (err) {
-	if (err) console.log(err);
-})
-con.on('error', function (err) {
-	if (err) console.log(err);
-});
+// con.connect(function (err) {
+// 	if (err) console.log(err);
+// })
+// con.on('error', function (err) {
+// 	if (err) console.log(err);
+// });
 //#endregion
 //#region  Commands...
 //run commands
@@ -959,34 +959,34 @@ function getbalef(fileType, fileId, userId) {
 //#endregion
 //#region get object from mysql
 //test change
-con.query(("SELECT UserID,State,Block FROM chat3.UserProp;"), function (err, result, fields) {
-	if (result != "" && (typeof result !== 'undefined')) {
-		result.forEach(function (element) {
-			tmp[element.UserID] = new tmpclass();
-			//tmp[element.UserID].state = element.State;
-			//tmp[element.UserID].bloc = element.Block || '';
-		});
-	}
-});
+// con.query(("SELECT UserID,State,Block FROM chat3.UserProp;"), function (err, result, fields) {
+// 	if (result != "" && (typeof result !== 'undefined')) {
+// 		result.forEach(function (element) {
+// 			tmp[element.UserID] = new tmpclass();
+// 			//tmp[element.UserID].state = element.State;
+// 			//tmp[element.UserID].bloc = element.Block || '';
+// 		});
+// 	}
+// });
 function qblock(usertocken) {
-	con.query(("UPDATE chat3.UserProp SET Block = '" + tmp[usertocken].bloc + "' where UserID =  '" + usertocken + "';"), function (err, result, fields) {
-		if (err) { console.log(err); }
-	});
+	// con.query(("UPDATE chat3.UserProp SET Block = '" + tmp[usertocken].bloc + "' where UserID =  '" + usertocken + "';"), function (err, result, fields) {
+	// 	if (err) { console.log(err); }
+	// });
 }
 function qhistory(usertocken1, usertocken2) {
-	con.query(("UPDATE chat3.UserProp SET History = CONCAT(History,'" + '||' + usertocken2 + "') where UserID = '" + usertocken1 + "';UPDATE chat3.UserProp SET History = CONCAT(History,'" + '||' + usertocken1 + "') where UserID = '" + usertocken2 + "';"), function (err, result, fields) {
-		if (err) { console.log(err); }
-	});
+	// con.query(("UPDATE chat3.UserProp SET History = CONCAT(History,'" + '||' + usertocken2 + "') where UserID = '" + usertocken1 + "';UPDATE chat3.UserProp SET History = CONCAT(History,'" + '||' + usertocken1 + "') where UserID = '" + usertocken2 + "';"), function (err, result, fields) {
+	// 	if (err) { console.log(err); }
+	// });
 }
 function qstate(usertocken, state) {
-	con.query(("UPDATE chat3.UserProp SET State = '" + state + "' where UserID = '" + usertocken + "';"), function (err, result, fields) {
-		if (err) { console.log(err); }
-	});
+	// con.query(("UPDATE chat3.UserProp SET State = '" + state + "' where UserID = '" + usertocken + "';"), function (err, result, fields) {
+	// 	if (err) { console.log(err); }
+	// });
 }
 function qinsert(usertocken) {
-	con.query(("INSERT INTO chat3.UserProp (UserID) VALUES( '" + usertocken + "');"), function (err, result, fields) {
-		if (err) { console.log(err); }
-	});
+	// con.query(("INSERT INTO chat3.UserProp (UserID) VALUES( '" + usertocken + "');"), function (err, result, fields) {
+	// 	if (err) { console.log(err); }
+	// });
 }
 //#endregion
 //#region Intervals...
